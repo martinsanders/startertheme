@@ -1,0 +1,155 @@
+.slider {
+    display: block;
+    position: relative;
+    margin: 0 0 $default-margin;
+    overflow: hidden;
+
+    &--item {
+        position: relative;
+        height: 500px;
+        background-position: center center;
+        background-repeat: no-repeat;
+        background-size: cover;
+
+        @include breakpoint(md) {
+            height: 330px;
+        }
+
+        @include breakpoint(sm) {
+            height: 330px;
+        }
+    }
+
+    &--heading {
+        position: absolute;
+        left: 0;
+        right: 0;
+        top: 100px;
+        display: block;
+        width: 600px;
+        height: 240px;
+        margin: auto;
+        padding: 0 20px;
+        text-align: center;
+
+        @include breakpoint(md) {
+            width: 100%;
+            height: 200px;
+        }
+
+        @include breakpoint(sm) {
+            width: 100%;
+            height: 200px;
+        }
+
+        h4 {
+            font-family: $navigation-font;
+            color: $customer-color;
+            font-size: 56px;
+            line-height: 64px;
+            font-weight: 600;
+            text-transform: uppercase;
+
+            @include breakpoint(sm) {
+                font-size: 26px;
+                line-height: 32px;
+            }
+        }
+    }
+
+    &--cta {
+        position: absolute;
+        left: 0;
+        right: 0;
+        bottom: 60px;
+        margin: auto;
+        padding: 0 20px;
+        text-align: center;
+    }
+}
+
+.owl {
+    &-carousel {
+        z-index: 0;
+    }
+
+    &-dots {
+        position: absolute;
+        bottom: 15px;
+        left: 0;
+        width: 100%;
+        text-align: center;
+
+        &.disabled {
+            display: none;
+        }
+    }
+
+    &-dot {
+        @include border-radius(50%);
+        display: inline-block;
+        width: 15px;
+        height: 15px;
+        margin: 0 5px;
+        background-color: transparent;
+        border: 2px solid $white;
+
+        &.active,
+        &:hover {
+            background-color: $white;
+        }
+    }
+
+    &-nav {
+        position: absolute;
+        top: 50%;
+        left: 0;
+        right: 0;
+        height: 0;
+
+        &.disabled {
+            display: none;
+        }
+    }
+
+    &-prev,
+    &-next {
+        display: block;
+        width: 50px;
+        height: 50px;
+        margin: -25px 0 0;
+        overflow: hidden;
+        text-indent: -99999px;
+        background: $customer-color url('/assets/img/slider-icons.svg') no-repeat 0 0;
+
+        &:hover,
+        &:focus {
+            background-color: $pink-dark;
+        }
+    }
+
+    &-prev {
+        float: left;
+        background-position: 0 0;
+    }
+
+    &-next {
+        float: right;
+        background-position: 0 -50px;
+    }
+}
+
+.gallery {
+    display: block;
+    padding: 0 42px 0 45px;
+
+    @include breakpoint(sm) {
+        padding: 0;
+    }
+
+    &--item {
+        margin-bottom: 20px;
+        padding-left: 10px;
+        padding-right: 10px;
+    }
+}

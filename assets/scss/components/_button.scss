@@ -1,0 +1,119 @@
+button {
+    cursor: pointer;
+    border: 0;
+}
+
+.side-buttons {
+    position: fixed;
+    right: 0;
+    top: 45%;
+    z-index: 103;
+
+    @include breakpoint(sm) {
+        display: none;
+    }
+
+    a {
+        display: block;
+        width: 44px;
+        height: 44px;
+        color: $white;
+        overflow: hidden;
+        text-indent: -99999px;
+        background: $customer-color url('/assets/img/header-icons.svg') no-repeat 0 0;
+
+        &:hover,
+        &:focus {
+            color: $white;
+            text-decoration: none;
+            background-color: $pink-dark;
+        }
+
+        &.phone {
+            background-position: 2px -118px;
+        }
+
+        &.email {
+            background-position: 2px -158px;
+        }
+    }
+}
+
+.btn-top {
+    @include border-radius(50%);
+    position: fixed;
+    right: 50px;
+    bottom: 200px;
+    display: none;
+    width: 45px;
+    height: 45px;
+    overflow: hidden;
+    text-indent: -99999px;
+    background-color: $customer-color;
+    z-index: 103;
+
+    @include breakpoint(sm) {
+        display: none;
+    }
+}
+
+.btn {
+    @include border-radius(0);
+    position: relative;
+    display: inline-block;
+    height: 40px;
+    border: 0;
+    color: $white;
+    font-size: 16px;
+    line-height: 24px;
+    background-color: $customer-color;
+    padding: 7px 15px;
+
+    &__big,
+    &--primary__big {
+        height: 54px;
+        font-size: 22px;
+        line-height: 30px;
+        padding: 12px 20px;
+    }
+
+    &:hover,
+    &:focus {
+        color: $white;
+        text-decoration: none;
+        background-color: $pink-dark;
+    }
+
+    &--secondary {
+        color: $black;
+        background-color: $grey;
+
+        &:hover,
+        &:focus {
+            color: $black;
+            text-decoration: none;
+            background-color: $grey-dark;
+        }
+    }
+
+    &--icon {
+        padding-left: 40px;
+
+        &::after {
+            position: absolute;
+            top: 10px;
+            left: 10px;
+            display: block;
+            width: 20px;
+            height: 20px;
+            content: '';
+            background: url('/assets/img/btn-icons.svg') no-repeat 0 0;
+        }
+
+        &__social-share {
+            &::after {
+                background-position: 0 -20px;
+            }
+        }
+    }
+}

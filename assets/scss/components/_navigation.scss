@@ -1,0 +1,227 @@
+.main-navigation {
+    text-align: left;
+
+    ul {
+        display: block;
+        margin: 0;
+        font-size: 0;
+        line-height: 0;
+
+        li {
+            display: block;
+            padding: 0;
+
+            @include breakpoint(md) {
+                margin: 0;
+            }
+
+            &.has-subnav {
+                @include breakpoint(md) {
+                    position: relative;
+
+                    > .toggle-subnav {
+                        display: block;
+                    }
+                }
+
+                @include breakpoint(sm) {
+                    position: relative;
+
+                    > .toggle-subnav {
+                        display: block;
+                    }
+                }
+
+                > .toggle-subnav {
+                    position: absolute;
+                    top: 11px;
+                    right: 0;
+                    display: block;
+                    width: 12px;
+                    height: 6px;
+                    padding: 0;
+                    background: url('/assets/img/header-icons.svg') no-repeat 0 -80px;
+                }
+
+                &.on,
+                &.active {
+                    > .toggle-subnav {
+                        @include transform(rotate(180deg));
+                    }
+                }
+
+                &.active.on {
+                    > .toggle-subnav {
+                        @include transform(rotate(0));
+                    }
+                }
+            }
+
+            a {
+                display: block;
+                color: $black;
+                font-size: 16px;
+                line-height: 24px;
+                padding: 6px 5px;
+
+                &:hover,
+                &:focus {
+                    color: $customer-color;
+                    text-decoration: none;
+                }
+            }
+
+            ul {
+                display: none;
+            }
+
+            &.active {
+                > a {
+                    color: $customer-color;
+                }
+
+                ul {
+                    display: block;
+                }
+            }
+        }
+    }
+
+    &__header {
+        float: right;
+        margin: 32px 0 12px;
+
+        @include breakpoint(md) {
+            margin: 0;
+        }
+
+        @include breakpoint(sm) {
+            margin: 0;
+        }
+
+        ul {
+            margin: 0;
+
+            li {
+                position: relative;
+                display: inline-block;
+                margin: 0 5px;
+
+                @include breakpoint(md) {
+                    display: block;
+                }
+
+                @include breakpoint(sm) {
+                    display: block;
+                }
+
+                &.has-subnav {
+                    > .toggle-subnav {
+                        display: none;
+
+                        @include breakpoint(md) {
+                            display: block;
+                            top: 0;
+                            width: 35px;
+                            height: 35px;
+                        }
+
+                        @include breakpoint(sm) {
+                            display: block;
+                            top: 0;
+                            width: 35px;
+                            height: 35px;
+                        }
+                    }
+                }
+
+                ul {
+                    position: absolute;
+                    left: -99999px;
+                    display: block;
+                    width: 200px;
+                    padding: 0 5px;
+                    background: $white;
+
+                    @include breakpoint(md) {
+                        position: static;
+                        display: none;
+                        width: auto;
+                        margin: 0;
+                        padding: 0 0 0 20px;
+                    }
+
+                    @include breakpoint(sm) {
+                        position: static;
+                        display: none;
+                        width: auto;
+                        margin: 0;
+                        padding: 0 0 0 20px;
+                    }
+
+                    li {
+                        display: block;
+                        margin: 0;
+                    }
+                }
+
+                &:hover,
+                &:focus {
+                    ul {
+                        left: auto;
+                    }
+                }
+            }
+        }
+
+        > ul {
+            margin: 0 0 10px;
+        }
+    }
+
+    &__footer {
+        display: inline-block;
+        margin: 0 0 15px;
+
+        @include breakpoint(sm) {
+            display: block;
+            text-align: center;
+        }
+
+        ul {
+            li {
+                display: inline-block;
+                margin: 0 5px;
+
+                a {
+                    color: $black;
+                    padding: 0;
+                    font-size: 14px;
+                }
+            }
+        }
+    }
+
+    &__side {
+        margin: 0 0 $default-margin;
+
+        ul {
+            li {
+                border-bottom: 1px solid $grey-light;
+
+                &:last-of-type {
+                    border-bottom: 0;
+                }
+
+                ul {
+                    padding: 0 0 0 20px;
+                    border-top: 1px solid $grey-light;
+                }
+            }
+        }
+
+        > ul {
+            margin: 0 0 $default-margin;
+        }
+    }
+}

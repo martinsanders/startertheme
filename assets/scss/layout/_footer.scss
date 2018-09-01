@@ -1,0 +1,26 @@
+.footer {
+    position: relative;
+    flex-shrink: 0;
+    background-color: $white-light;
+
+    &--top {
+        background-color: $grey-light;
+        display: block;
+        padding: 15px 0 0;
+    }
+
+    &--bottom {
+        padding: 15px 0 0;
+        text-align: center;
+    }
+
+    &--copyright {
+        display: inline-block;
+        font-size: 14px;
+        margin: 0 0 15px;
+
+        @include breakpoint(sm) {
+            display: block;
+        }
+    }
+}

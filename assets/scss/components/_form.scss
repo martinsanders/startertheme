@@ -1,0 +1,124 @@
+form {
+    label {
+        display: block;
+        cursor: pointer;
+    }
+
+    select {
+        -webkit-appearance: none;
+        -moz-appearance: none;
+        -moz-user-select: none;
+        -ms-user-select: none;
+        user-select: none;
+    }
+
+    .help-block {
+        margin: 8px 0 0;
+    }
+}
+
+.form {
+    &-control {
+        @include border-radius(0);
+        height: 46px;
+        padding: 10px 15px;
+        border-color: $grey-dark;
+
+        &__textarea {
+            height: 120px;
+        }
+
+        &__select {
+            background: url('/assets/img/select-icon.svg') no-repeat center right;
+        }
+    }
+
+    &-check {
+        padding-left: 0;
+
+        input[type="radio"],
+        input[type="checkbox"] {
+            display: none;
+
+            + i {
+                position: relative;
+                display: inline-block;
+                width: 18px;
+                height: 18px;
+                border: 2px solid $grey-dark;
+                margin: -3px 6px -3px 0;
+
+                &::before {
+                    position: absolute;
+                    top: 1px;
+                    left: 1px;
+                    display: none;
+                    width: 12px;
+                    height: 12px;
+                    content: '';
+                    background-color: $customer-color;
+                }
+            }
+
+            &:checked {
+                + i {
+                    &::before {
+                        display: block;
+                    }
+                }
+            }
+        }
+
+        input[type="radio"] {
+            + i {
+                @include border-radius(50%);
+
+                &::before {
+                    @include border-radius(50%);
+                }
+            }
+        }
+    }
+
+    &-group {
+        &.has-error {
+            .error {
+                border-color: $red;
+            }
+
+            .help-block {
+                color: $red;
+            }
+        }
+
+        > label {
+            font-weight: 600;
+        }
+    }
+}
+
+// Webkit
+::-webkit-input-placeholder {
+    color: $grey;
+    font-style: italic;
+}
+
+// Firefox 4-18
+::-moz-placeholder {
+    color: $grey;
+    font-style: italic;
+}
+
+// IE10+
+:-ms-input-placeholder {
+    color: $grey;
+    font-style: italic;
+}
+
+select::-ms-expand {
+    display: none;
+}
+
+select option[disabled] {
+    display: none;
+}

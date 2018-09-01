@@ -1,0 +1,97 @@
+.richtext {
+    overflow: hidden;
+    margin: 0 0 $default-margin;
+
+    ul,
+    ol {
+        display: block;
+        list-style-type: disc;
+        padding: 0 0 0 20px;
+    }
+
+    ol {
+        list-style-type: decimal;
+    }
+
+    p {
+        font-weight: 400;
+    }
+
+    a:not(.btn) {
+        color: $customer-color;
+        outline: none;
+
+        &:hover,
+        &:focus {
+            outline: none;
+        }
+    }
+
+    strong,
+    b {
+        font-weight: 600;
+    }
+
+    em,
+    i {
+        font-style: italic;
+    }
+
+    u {
+        text-decoration: underline;
+    }
+
+    address {
+        font-weight: 400;
+    }
+
+    // Blockquote
+    blockquote {
+        padding: 0 0 0 24px;
+        margin: 25px 0 40px;
+        border-left: 5px solid $text-color;
+
+        p {
+            font-size: 20px;
+            line-height: 28px;
+            font-style: italic;
+
+            &::before {
+                content: '"';
+            }
+
+            &::after {
+                content: '"';
+            }
+        }
+    }
+
+    pre {
+        font-family: monospace, monospace;
+    }
+
+    table {
+        width: 100%;
+
+        tr {
+            &:last-of-type {
+                th,
+                td {
+                    border-bottom: 0;
+                }
+            }
+
+            th,
+            td {
+                padding: 5px 0;
+                border-bottom: 1px solid $grey;
+            }
+        }
+    }
+
+    hr {
+        height: 1px;
+        background: $text-color;
+        border: 0;
+    }
+}
