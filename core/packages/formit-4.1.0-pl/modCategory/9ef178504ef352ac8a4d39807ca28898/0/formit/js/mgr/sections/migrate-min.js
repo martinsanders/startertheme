@@ -1,0 +1,1 @@
+Ext.onReady(function(){MODx.load({xtype:"formit-page-migrate"})}),FormIt.page.Migrate=function(t){t=t||{},Ext.applyIf(t,{components:[{xtype:"formit-panel-migrate",renderTo:"formit-panel-migrate-div"}]}),FormIt.page.Migrate.superclass.constructor.call(this,t)},Ext.extend(FormIt.page.Migrate,MODx.Component),Ext.reg("formit-page-migrate",FormIt.page.Migrate);

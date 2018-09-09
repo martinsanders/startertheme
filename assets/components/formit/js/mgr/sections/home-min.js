@@ -1,0 +1,1 @@
+Ext.onReady(function(){MODx.load({xtype:"formit-page-home"})}),FormIt.page.Home=function(e){e=e||{},Ext.applyIf(e,{components:[{xtype:"formit-panel-home",renderTo:"formit-panel-home-div"}]}),FormIt.page.Home.superclass.constructor.call(this,e)},Ext.extend(FormIt.page.Home,MODx.Component),Ext.reg("formit-page-home",FormIt.page.Home);

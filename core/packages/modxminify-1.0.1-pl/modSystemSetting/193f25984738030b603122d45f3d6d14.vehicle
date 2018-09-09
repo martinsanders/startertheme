@@ -1,0 +1,16 @@
+<?php return array (
+  'unique_key' => 'key',
+  'preserve_keys' => true,
+  'update_object' => false,
+  'namespace' => 'modxminify',
+  'resolve' => NULL,
+  'validate' => NULL,
+  'vehicle_package' => 'transport',
+  'vehicle_class' => 'xPDOObjectVehicle',
+  'guid' => '890bf12b2e3356ed9e0617fe131cf92e',
+  'package' => 'modx',
+  'class' => 'modSystemSetting',
+  'signature' => '193f25984738030b603122d45f3d6d14',
+  'native_key' => 'modxminify.cache_url',
+  'object' => '{"key":"modxminify.cache_url","value":"","xtype":"textfield","namespace":"modxminify","area":"Cache Settings","editedon":null}',
+);

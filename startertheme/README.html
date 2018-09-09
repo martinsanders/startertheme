@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en">
+<head>
+	<meta charset="utf-8"/>
+</head>
+<body>
+
+<h1 id="heibel-basetheme">Heibel - Base theme</h1>
+
+<p>This is the Heibel base theme, with this theme you can easily create new themes for Heibel. It contains Bootstrap 4 and basic styling and HTML.</p>
+
+<h2 id="createanewthemebasedonthebasetheme">Create a new theme based on the base theme</h2>
+
+<ul>
+<li>Copy this base theme and rename the folder</li>
+<li>Search for <code>basetheme</code> and <code>base-theme</code> and rename it to your theme name</li>
+<li>Change the composer.json in the root to match your theme</li>
+<li>Host your theme on GIT, for example on Bitbucket (the repository needs public access)</li>
+<li>Remove this README.md and replace it with the README.example.md, then change it to match your theme</li>
+</ul>
+
+<p>This theme folder can live in one of the following directories:</p>
+
+<ul>
+<li>MODX_WEBROOT/theme-name</li>
+<li>MODX_WEBROOT/heibel/theme-name</li>
+<li>MODX_WEBROOT/vendor/heibel/theme-name (for composer installations)</li>
+</ul>
+
+<p>Run the <code>php ./PATH_TO_THEME/installer/installer.php</code> to install all the database related data, it does both create and update migrations.</p>
+
+<h2 id="elements">Elements</h2>
+
+<p>The elements (chunks, plugins, snippets, templates) can be found in the <code>elements</code> folder.</p>
+
+<h2 id="lexicons">Lexicons</h2>
+
+<p>The lexicons can be found in the <code>lexicon</code> folder.</p>
+
+<h2 id="assets">Assets</h2>
+
+<p>The CSS and JavaScript assets can be found in the <code>assets</code> folder. They are getting compiled by ModxMinify.
+To override assets on website level just create a <code>MODX_WEBROOT/theme-configuration</code> folder in the webroot of MODX and enable line 1 and 36 in this file: <code>/assets/scss/style.scss</code>
+Now create this files in de MODX webroot folder:</p>
+
+<ul>
+<li>MODX_WEBROOT/theme-configuration/assets/scss/settings/vars.scss</li>
+<li>MODX_WEBROOT/theme-configuration/assets/scss/override.scss</li>
+</ul>
+
+<p>And start overriding the SCSS.</p>
+
+<p>If you create new variables in <code>/assets/scss/settings/_vars.scss</code> please make sure you add the <code>!default</code> suffix, to allow overriding on theme level.</p>
+
+<h2 id="configurations">Configurations</h2>
+
+<p>Configuration files can be found in the <code>configuration</code> folder. To override a config on website level just copy the config and put it in <code>MODX_WEBROOT/theme-configuration</code>.
+The configs will now get merged and the <code>theme-configuration</code> config is leading.<br />
+The configuration files can be used to create, update or install:</p>
+
+<ul>
+<li>Chunks</li>
+<li>Packages</li>
+<li>Plugins</li>
+<li>Resources</li>
+<li>Settings (both system and context)</li>
+<li>Snippets</li>
+<li>Templates</li>
+<li>Template variables</li>
+<li>Categories</li>
+<li>Contexts</li>
+<li>Content types</li>
+<li>Menus</li>
+<li>Media sources</li>
+<li>Namespaces</li>
+<li>MIGX JSON configs</li>
+<li>Client config settings</li>
+</ul>
+
+<p>You can also manage other database models with the additional config. For examples look at the existing configs in the <code>configuration</code> folder. We use XPDO objects so you can edit every single database table field.
+Records can be skipped from updating by adding <code>'exclude_from_update' =&gt; true</code> to the object. Or skip certain fields (on update) like this <code>'exclude_fields_from_update' =&gt; ['longtitle', 'description']</code>.</p>
+
+</body>
+</html>
+

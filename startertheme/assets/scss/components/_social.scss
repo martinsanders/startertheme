@@ -1,0 +1,153 @@
+.social-follow {
+    display: block;
+    font-size: 0;
+    line-height: 0;
+    margin: 0 -5px;
+
+    &--item {
+        display: inline-block;
+        margin: 0 5px 0;
+        a {
+            display: block;
+            font-size: 0.7rem;
+
+        }
+        &__facebook {
+            a {
+                &:hover .fa-circle {
+                    color: $facebook-color;
+                }
+            }
+        }
+
+        &__twitter {
+            a {
+                &:hover .fa-circle {
+                    color: $twitter-color;
+                }
+            }
+        }
+
+        &__youtube {
+            a {
+                &:hover .fa-circle {
+                    color: $youtube-color;
+                }
+            }
+        }
+
+        &__linkedin {
+            a {
+                &:hover .fa-circle {
+                    color: $linkedin-color;
+                }
+            }
+        }
+
+        &__instagram {
+            a {
+                &:hover .fa-circle {
+                    color: $instagram-color;
+                }
+            }
+        }
+
+        &__googleplus {
+            a {
+                &:hover .fa-circle {
+                    color: $googleplus-color;
+                }
+            }
+        }
+
+        &__pinterest {
+            a {
+                &:hover .fa-circle {
+                    color: $pinterest-color;
+                }
+            }
+        }
+
+        &__newsletter {
+            a {
+                &:hover .fa-circle {
+                    color: $newsletter-color;
+                }
+            }
+        }
+        
+    }
+}
+
+.social-share {
+    display: block;
+    flex-shrink: 0;
+    text-align: center;
+    padding: 15px 0 0;
+    background-color: $white-dark;
+
+    &--label {
+        display: inline-block;
+        margin: 0 5px 15px;
+
+        @include breakpoint(sm) {
+            display: block;
+        }
+    }
+
+    &--list {
+        display: inline-block;
+        font-size: 0;
+        line-height: 0;
+        margin: 0;
+
+        @include breakpoint(sm) {
+            display: block;
+        }
+    }
+
+    &--item {
+        display: inline-block;
+        margin: 0 5px 15px;
+
+        a {
+            position: relative;
+            display: block;
+            color: $white;
+            font-size: 16px;
+            line-height: 24px;
+            padding: 6px 15px 6px 36px;
+
+            @include breakpoint(sm) {
+                width: 36px;
+                height: 36px;
+                padding: 0;
+            }
+
+            &::before {
+                position: absolute;
+                top: 0;
+                left: 0;
+                display: block;
+                width: 36px;
+                height: 36px;
+                content: '';
+                background: url('/assets/img/social-media.svg') no-repeat 0 0;
+            }
+
+            span {
+                @include breakpoint(sm) {
+                    display: none;
+                }
+            }
+        }
+    }
+}
+
+.social-mail-popup {
+    display: none;
+
+    .nivo-lightbox-content & {
+        display: block;
+    }
+}
